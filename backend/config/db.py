@@ -56,6 +56,12 @@ def init_db(app=None):
         create_qualification_indexes()
     except Exception as exc:
         print(f"Qualification result index setup skipped: {exc}")
+    
+    try:
+        from models.emailModel import create_indexes as create_email_indexes
+        create_email_indexes()
+    except Exception as exc:
+        print(f"Email index setup skipped: {exc}")
 
 
 def get_db():

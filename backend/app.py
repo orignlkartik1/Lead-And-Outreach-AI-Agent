@@ -9,6 +9,7 @@ from routes.authRoutes import auth_bp
 from routes.leadRoutes import lead_bp
 from routes.icpRoutes import icp_bp
 from routes.asyncRoutes import async_bp
+from routes.emailRoutes import email_bp
 
 
 def get_cors_origins():
@@ -46,6 +47,7 @@ def create_app():
     app.register_blueprint(lead_bp)
     app.register_blueprint(icp_bp)
     app.register_blueprint(async_bp)
+    app.register_blueprint(email_bp)
 
     @app.route('/health', methods=['GET'])
     def health():
